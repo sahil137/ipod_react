@@ -1,7 +1,8 @@
 import React from 'react';
+import Ipod from './Ipod';
 
 const App = () => {
-  return <div>This is an Ipod</div>;
+  return <Ipod />;
 };
 
 export default App;
