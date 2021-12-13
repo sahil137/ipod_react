@@ -6,15 +6,44 @@ class Home extends Component {
     return (
       <div className="homeScreen" style={styles.homeScreen}>
         <div style={styles.menuList} className="menuList">
-          <h3>Ipod</h3>
           <ListGroup>
-            <ListGroup.Item style={{ border: '0' }} active>
+            {/* Change the classname of item if the opion is active */}
+            <ListGroup.Item
+              className={this.props.activeOption === 'Songs' ? 'active' : ''}
+              style={{ border: '0' }}
+            >
               Songs
             </ListGroup.Item>
-            <ListGroup.Item style={{ border: '0' }}>Albums</ListGroup.Item>
-            <ListGroup.Item style={{ border: '0' }}>Artists</ListGroup.Item>
-            <ListGroup.Item style={{ border: '0' }}>Playlist</ListGroup.Item>
-            <ListGroup.Item style={{ border: '0' }}>Settings</ListGroup.Item>
+            <ListGroup.Item
+              className={this.props.activeOption === 'Albums' ? 'active' : ''}
+              style={{ border: '0' }}
+            >
+              Albums
+            </ListGroup.Item>
+            <ListGroup.Item
+              className={this.props.activeOption === 'Artists' ? 'active' : ''}
+              style={{ border: '0' }}
+            >
+              Artists
+            </ListGroup.Item>
+            <ListGroup.Item
+              className={this.props.activeOption === 'Playlist' ? 'active' : ''}
+              style={{ border: '0' }}
+            >
+              Playlist
+            </ListGroup.Item>
+            <ListGroup.Item
+              className={this.props.activeOption === 'Games' ? 'active' : ''}
+              style={{ border: '0' }}
+            >
+              Games
+            </ListGroup.Item>
+            <ListGroup.Item
+              className={this.props.activeOption === 'Settings' ? 'active' : ''}
+              style={{ border: '0' }}
+            >
+              Settings
+            </ListGroup.Item>
           </ListGroup>
         </div>
         <div className="wallpaperContainer" style={styles.wallpaperContainer}>
@@ -34,13 +63,15 @@ const styles = {
     position: 'relative',
   },
   menuList: {
+    position: 'absolute',
     height: '100%',
     width: '50%',
+    top: '10px',
   },
   wallpaperContainer: {
     position: 'absolute',
-    height: '270px',
-    width: '250px',
+    height: '260px',
+    width: '240px',
     zIndex: '-1',
     top: '0',
     left: '0',
