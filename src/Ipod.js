@@ -35,63 +35,70 @@ class Ipod extends Component {
         if (angle < 0) {
           changeInAngle++;
           if (changeInAngle === 15) {
-            console.log('Change State ');
+            // console.log('Change State ');
             changeInAngle = 0;
-            if (this.state.activeOption === 'Songs') {
-              this.setState({
-                activeOption: 'Settings',
-              });
-            } else if (this.state.activeOption === 'Albums') {
-              this.setState({
-                activeOption: 'Songs',
-              });
-            } else if (this.state.activeOption === 'Artists') {
-              this.setState({
-                activeOption: 'Albums',
-              });
-            } else if (this.state.activeOption === 'Playlist') {
-              this.setState({
-                activeOption: 'Artists',
-              });
-            } else if (this.state.activeOption === 'Games') {
-              this.setState({
-                activeOption: 'Playlist',
-              });
-            } else if (this.state.activeOption === 'Settings') {
-              this.setState({
-                activeOption: 'Games',
-              });
+            if (this.state.activePage === 'Home') {
+              if (this.state.activeOption === 'Songs') {
+                this.setState({
+                  activeOption: 'Settings',
+                });
+              } else if (this.state.activeOption === 'Albums') {
+                this.setState({
+                  activeOption: 'Songs',
+                });
+              } else if (this.state.activeOption === 'Artists') {
+                this.setState({
+                  activeOption: 'Albums',
+                });
+              } else if (this.state.activeOption === 'Playlist') {
+                this.setState({
+                  activeOption: 'Artists',
+                });
+              } else if (this.state.activeOption === 'Games') {
+                this.setState({
+                  activeOption: 'Playlist',
+                });
+              } else if (this.state.activeOption === 'Settings') {
+                this.setState({
+                  activeOption: 'Games',
+                });
+              }
+            } else if (this.state.activePage === 'Playlist') {
+            } else if (this.state.activePage === 'Albums') {
             }
           }
         } else {
           changeInAngle++;
+          // for clockwise rotation
           if (changeInAngle === 15) {
-            console.log('Change State');
+            // console.log('Change State');
             changeInAngle = 0;
-            if (this.state.activeOption === 'Songs') {
-              this.setState({
-                activeOption: 'Albums',
-              });
-            } else if (this.state.activeOption === 'Albums') {
-              this.setState({
-                activeOption: 'Artists',
-              });
-            } else if (this.state.activeOption === 'Artists') {
-              this.setState({
-                activeOption: 'Playlist',
-              });
-            } else if (this.state.activeOption === 'Playlist') {
-              this.setState({
-                activeOption: 'Games',
-              });
-            } else if (this.state.activeOption === 'Games') {
-              this.setState({
-                activeOption: 'Settings',
-              });
-            } else if (this.state.activeOption === 'Settings') {
-              this.setState({
-                activeOption: 'Songs',
-              });
+            if (this.state.activePage === 'Home') {
+              if (this.state.activeOption === 'Songs') {
+                this.setState({
+                  activeOption: 'Albums',
+                });
+              } else if (this.state.activeOption === 'Albums') {
+                this.setState({
+                  activeOption: 'Artists',
+                });
+              } else if (this.state.activeOption === 'Artists') {
+                this.setState({
+                  activeOption: 'Playlist',
+                });
+              } else if (this.state.activeOption === 'Playlist') {
+                this.setState({
+                  activeOption: 'Games',
+                });
+              } else if (this.state.activeOption === 'Games') {
+                this.setState({
+                  activeOption: 'Settings',
+                });
+              } else if (this.state.activeOption === 'Settings') {
+                this.setState({
+                  activeOption: 'Songs',
+                });
+              }
             }
           }
         }
@@ -102,7 +109,8 @@ class Ipod extends Component {
 
   render() {
     return (
-      <div>
+      <div style={styles.ipodContainer}>
+        <h3 style={styles.heading}>Ipod</h3>
         <Screen
           activeOption={this.state.activeOption}
           activePage={this.state.activePage}
@@ -136,6 +144,23 @@ class Ipod extends Component {
 }
 
 const styles = {
+  heading: {
+    fontSize: '1.4rem',
+  },
+  ipodContainer: {
+    height: '33rem',
+    width: '17rem',
+    backgroundColor: 'grey',
+    margin: '4rem auto',
+    display: 'flex',
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    justifyContent: 'center',
+    borderRadius: '20px',
+    position: 'relative',
+    // border: '2px solid black',
+    zIndex: '0',
+  },
   container: {
     height: 200,
     width: 250,
@@ -143,7 +168,9 @@ const styles = {
     position: 'relative',
     margin: 'auto',
     marginTop: '2px',
-    zIndex: 1000,
+    zIndex: '10000',
+    // border: '2px solid black',
+    borderRadius: '10px',
   },
 
   wheel: {
