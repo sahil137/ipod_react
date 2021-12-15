@@ -47,11 +47,11 @@ class Home extends Component {
           </ListGroup>
         </div>
         <div className="wallpaperContainer" style={styles.wallpaperContainer}>
-          <img
+          {/* <img
             style={{ height: '100%', width: '100%' }}
             src="https://i.pinimg.com/474x/9a/dc/55/9adc555f69cc28746d3c0363a1028933.jpg"
             alt="Wallpaper"
-          />
+          /> */}
         </div>
       </div>
     );
@@ -60,21 +60,25 @@ class Home extends Component {
 
 const styles = {
   homeScreen: {
-    position: 'relative',
+    height: '100%',
+    width: '100%',
+    display: 'flex',
+    flexDirecton: 'row',
   },
   menuList: {
-    position: 'absolute',
     height: '100%',
     width: '50%',
-    top: '10px',
+    boxShadow: 'rgba(0, 0, 0, 0.16) 0px 1px 4px',
+    zIndex: '1',
   },
   wallpaperContainer: {
-    position: 'absolute',
-    height: '260px',
-    width: '240px',
-    zIndex: '-1',
-    top: '0',
-    left: '0',
+    height: '100%',
+    width: '50%',
+    backgroundImage:
+      'url("https://i.pinimg.com/474x/9a/dc/55/9adc555f69cc28746d3c0363a1028933.jpg")',
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    borderRadius: '0 12px 12px 0',
   },
 };
 

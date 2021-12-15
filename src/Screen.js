@@ -9,7 +9,7 @@ class Screen extends React.Component {
         {this.props.activePage === 'Home' ? (
           <Home activeOption={this.props.activeOption} />
         ) : null}
-        {this.props.activePage === 'Songs' ? <Games /> : null}
+        {this.props.activePage === 'Games' ? <Games /> : null}
       </div>
     );
   }
@@ -17,12 +17,21 @@ class Screen extends React.Component {
 
 const styles = {
   screen: {
-    height: '270px',
-    width: '240px',
-    margin: 'auto',
-    marginTop: '0',
-    // border: '1px solid black',
+    height: '50%',
+    width: '95%',
+    borderRadius: '12px',
+    backgroundColor: 'white',
+    border: '2px solid black',
+    marginTop: '1rem',
   },
+  // screen: {
+  //   height: '270px',
+  //   width: '240px',
+  //   margin: 'auto',
+  //   marginTop: '0',
+  //   border: '1px solid black',
+  //   borderRadius: '10px',
+  // },
 };
 
 export default Screen;

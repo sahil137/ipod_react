@@ -107,6 +107,19 @@ class Ipod extends Component {
     }
   };
 
+  changePage = () => {
+    this.setState({
+      activeOption: this.state.activeOption,
+      activePage: this.state.activeOption,
+    });
+  };
+
+  backToHomeScreen = () => {
+    this.setState({
+      activePage: 'Home',
+    });
+  };
+
   render() {
     return (
       <div style={styles.ipodContainer}>
@@ -121,10 +134,18 @@ class Ipod extends Component {
           onMouseOver={this.rotateWheel}
           draggable={false}
         >
-          <div className="menuButton" style={styles.menuButton}>
+          <div
+            onClick={this.backToHomeScreen}
+            className="menuButton"
+            style={styles.menuButton}
+          >
             <FontAwesomeIcon size="2x" icon={faBars} />
           </div>
-          <div className="nextButton" style={styles.nextButton}>
+          <div
+            onClick={this.changePage}
+            className="nextButton"
+            style={styles.nextButton}
+          >
             <FontAwesomeIcon size="2x" icon={faForward} />
           </div>
           <div className="prevButton" style={styles.prevButton}>
@@ -168,7 +189,7 @@ const styles = {
     position: 'relative',
     margin: 'auto',
     marginTop: '2px',
-    zIndex: '10000',
+    // zIndex: '10000',
     // border: '2px solid black',
     borderRadius: '10px',
   },
@@ -198,7 +219,7 @@ const styles = {
     width: '40%',
     borderRadius: '50%',
     backgroundColor: 'lightgrey',
-    zIndex: '-1',
+    // zIndex: '-1',
   },
   menuButton: {
     position: 'absolute',
