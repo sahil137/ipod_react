@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { ListGroup } from 'react-bootstrap';
+import { ListGroup, ListGroupItem } from 'react-bootstrap';
 
 class Home extends Component {
   render() {
@@ -8,42 +8,42 @@ class Home extends Component {
         <div style={styles.menuList} className="menuList">
           <ListGroup>
             {/* Change the classname of item if the opion is active */}
-            <ListGroup.Item
+            <ListGroupItem
               className={this.props.activeOption === 'Songs' ? 'active' : ''}
               style={{ border: '0' }}
             >
               Songs
-            </ListGroup.Item>
-            <ListGroup.Item
+            </ListGroupItem>
+            <ListGroupItem
               className={this.props.activeOption === 'Albums' ? 'active' : ''}
               style={{ border: '0' }}
             >
               Albums
-            </ListGroup.Item>
-            <ListGroup.Item
+            </ListGroupItem>
+            <ListGroupItem
               className={this.props.activeOption === 'Artists' ? 'active' : ''}
               style={{ border: '0' }}
             >
               Artists
-            </ListGroup.Item>
-            <ListGroup.Item
+            </ListGroupItem>
+            <ListGroupItem
               className={this.props.activeOption === 'Playlist' ? 'active' : ''}
               style={{ border: '0' }}
             >
               Playlist
-            </ListGroup.Item>
-            <ListGroup.Item
+            </ListGroupItem>
+            <ListGroupItem
               className={this.props.activeOption === 'Games' ? 'active' : ''}
               style={{ border: '0' }}
             >
               Games
-            </ListGroup.Item>
-            <ListGroup.Item
+            </ListGroupItem>
+            <ListGroupItem
               className={this.props.activeOption === 'Settings' ? 'active' : ''}
               style={{ border: '0' }}
             >
               Settings
-            </ListGroup.Item>
+            </ListGroupItem>
           </ListGroup>
         </div>
         <div className="wallpaperContainer" style={styles.wallpaperContainer}>

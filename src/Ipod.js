@@ -31,11 +31,10 @@ class Ipod extends Component {
       activeRegion.bind(container, 'rotate', (event) => {
         var angle = event.detail.distanceFromLast;
         // logic for anticlockwose rotation
-        console.log(angle);
         if (angle < 0) {
           changeInAngle++;
           if (changeInAngle === 15) {
-            // console.log('Change State ');
+            // console.log(angle);
             changeInAngle = 0;
             if (this.state.activePage === 'Home') {
               if (this.state.activeOption === 'Songs') {
@@ -63,15 +62,22 @@ class Ipod extends Component {
                   activeOption: 'Games',
                 });
               }
-            } else if (this.state.activePage === 'Playlist') {
-            } else if (this.state.activePage === 'Albums') {
+            } else if (this.state.activePage === 'Songs') {
+              if (this.state.activeOption === 'English') {
+                this.setState({
+                  activeOption: 'Hindi',
+                });
+              } else if (this.state.activeOption === 'Hindi') {
+                this.setState({
+                  activeOption: 'English',
+                });
+              }
             }
           }
         } else {
           changeInAngle++;
           // for clockwise rotation
           if (changeInAngle === 15) {
-            // console.log('Change State');
             changeInAngle = 0;
             if (this.state.activePage === 'Home') {
               if (this.state.activeOption === 'Songs') {
@@ -97,6 +103,16 @@ class Ipod extends Component {
               } else if (this.state.activeOption === 'Settings') {
                 this.setState({
                   activeOption: 'Songs',
+                });
+              }
+            } else if (this.state.activePage === 'Songs') {
+              if (this.state.activeOption === 'English') {
+                this.setState({
+                  activeOption: 'Hindi',
+                });
+              } else if (this.state.activeOption === 'Hindi') {
+                this.setState({
+                  activeOption: 'English',
                 });
               }
             }
@@ -108,16 +124,34 @@ class Ipod extends Component {
   };
 
   changePage = () => {
-    this.setState({
-      activeOption: this.state.activeOption,
-      activePage: this.state.activeOption,
-    });
+    if (this.state.activeOption === 'Songs') {
+      this.setState({
+        activeOption: 'English',
+        activePage: this.state.activeOption,
+      });
+    } else {
+      this.setState({
+        activeOption: this.state.activeOption,
+        activePage: this.state.activeOption,
+      });
+    }
   };
 
   backToHomeScreen = () => {
-    this.setState({
-      activePage: 'Home',
-    });
+    if (
+      this.state.activeOption === 'English' ||
+      this.state.activeOption === 'Hindi'
+    ) {
+      this.setState({
+        activeOption: 'Songs',
+        activePage: 'Home',
+      });
+    } else {
+      this.setState({
+        activePage: 'Home',
+        activeOption: this.state.activeOption,
+      });
+    }
   };
 
   render() {
