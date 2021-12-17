@@ -2,6 +2,7 @@ import React from 'react';
 import Home from './Home';
 import Games from './Games';
 import Songs from './Songs';
+import Albums from './Albums';
 
 class Screen extends React.Component {
   render() {
@@ -14,6 +15,7 @@ class Screen extends React.Component {
         {this.props.activePage === 'Songs' ? (
           <Songs activeOption={this.props.activeOption} />
         ) : null}
+        {this.props.activePage === 'Albums' ? <Albums /> : null}
       </div>
     );
   }
@@ -26,7 +28,7 @@ const styles = {
     borderRadius: '12px',
     backgroundColor: 'white',
     border: '2px solid black',
-    marginTop: '1rem',
+    marginTop: '-1rem',
   },
   // screen: {
   //   height: '270px',

@@ -4,7 +4,7 @@ export class Games extends Component {
   render() {
     return (
       <div style={styles.gameContainer}>
-        <div style={{ width: '100%', height: '90%' }}>
+        <div style={{ width: '100%', height: '100%' }}>
           <img
             style={styles.pacman}
             src="https://i.gifer.com/T7n.gif"

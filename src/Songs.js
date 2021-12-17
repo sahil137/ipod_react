@@ -35,12 +35,18 @@ const styles = {
   },
   wallpaper: {
     height: '100%',
-    width: '75%',
+    width: '50%',
     backgroundImage:
       'url("https://i.pinimg.com/originals/b5/ca/9a/b5ca9a6c64b6a5c445dc993dd6294d10.jpg")',
     // backgroundSize: 'cover',
     backgroundPosition: 'center',
     borderRadius: '0 12px 12px 0',
+  },
+  menuList: {
+    height: '100%',
+    width: '50%',
+    boxShadow: 'rgba(0, 0, 0, 0.16) 0px 1px 4px',
+    zIndex: '1',
   },
 };
 

@@ -129,6 +129,12 @@ class Ipod extends Component {
         activeOption: 'English',
         activePage: this.state.activeOption,
       });
+    } else if (
+      this.state.activeOption === 'Settings' ||
+      this.state.activeOption === 'Playlist' ||
+      this.state.activeOption === 'Artists'
+    ) {
+      return;
     } else {
       this.setState({
         activeOption: this.state.activeOption,
@@ -200,12 +206,13 @@ class Ipod extends Component {
 
 const styles = {
   heading: {
-    fontSize: '1.4rem',
+    fontSize: '1.2rem',
+    marginTop: '0.4rem',
   },
   ipodContainer: {
-    height: '33rem',
+    height: '35rem',
     width: '17rem',
-    backgroundColor: 'grey',
+    backgroundColor: '#9e9e9e',
     margin: '4rem auto',
     display: 'flex',
     flexDirection: 'row',
@@ -213,18 +220,18 @@ const styles = {
     justifyContent: 'center',
     borderRadius: '20px',
     position: 'relative',
+    boxShadow:
+      'rgb(85, 91, 255) 0px 0px 0px 3px, rgb(31, 193, 27) 0px 0px 0px 6px, rgb(255, 217, 19) 0px 0px 0px 9px, rgb(255, 156, 85) 0px 0px 0px 12px, rgb(255, 85, 85) 0px 0px 0px 15px',
     // border: '2px solid black',
     zIndex: '0',
   },
   container: {
-    height: 200,
-    width: 250,
-    backgroundColor: 'lightgrey',
+    height: '38%',
+    width: '90%',
+    // backgroundColor: 'lightgrey',
     position: 'relative',
     margin: 'auto',
     marginTop: '2px',
-    // zIndex: '10000',
-    // border: '2px solid black',
     borderRadius: '10px',
   },
 
